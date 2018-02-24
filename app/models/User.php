@@ -3,9 +3,8 @@
 
 class User {
 
-
+	// INDEX STRANA  
 	public static function index($id){
-
 
 		$db=Database::getInstance();
 		$result=$db->query("SELECT * FROM `users` WHERE id='".$id."' ");
@@ -20,6 +19,7 @@ class User {
 		
 	}
 
+	// LOGOVANJE USERA
 	public static function loginIn($request){
 
 		$request->password=md5($request->password);
@@ -38,6 +38,7 @@ class User {
 		
 	}
 
+	// REGISTROVANJE USERA
 	public static function register($request){
 
 		$request->password=md5($request->password);
@@ -54,7 +55,7 @@ class User {
 	}
 
 
-
+	// TRAZENJE KORISNIKA
 	public static function search($search_text){
 
 		$db=Database::getInstance();
